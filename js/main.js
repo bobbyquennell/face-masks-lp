@@ -22,7 +22,48 @@ var Site;
     init: function(elt) {
 
       this.videoEmbedOnClick();
-      $('.carousel-item').slick({infinite: true, slidesToShow: 3, slidesToScroll: 3
+      $('.carousel-product').slick({
+        infinite: true,
+        dots: true,
+        responsive: [
+          {
+            breakpoint: 1480,
+            settings: "unslick",
+          },
+
+          {
+            breakpoint: 799,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+     });
+      $('.carousel-instagram').slick({
+        infinite: true,
+        dots: true,
+        responsive: [
+          {
+            breakpoint: 1480,
+            settings: "unslick",
+          },
+
+          {
+            breakpoint: 640,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
      });
     },
     /**

@@ -65,17 +65,17 @@
 @media screen { .landing_page [hidden~="screen"] { display: inherit; }
   .landing_page [hidden~="screen"]:not(:active):not(:focus):not(:target) { clip: rect(0 0 0 0) !important; position: absolute !important; } }
 
-@font-face { font-family: 'Interstate-BlackCond'; src: url("../fonts/Interstate-BlackCond.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'Interstate-BlackCond'; src: url("../fonts/Interstate-BlackCond.ttf") format("truetype"), url("../fonts/Interstate-BlackCond.eot?#iefix") format("eot"), url("../fonts/Interstate-BlackCond.woff") format("woff"); font-weight: normal; font-style: normal; }
 
-@font-face { font-family: 'Interstate-Bold'; src: url("../fonts/Interstate-Bold.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'Interstate-Bold'; src: url("../fonts/Interstate-Bold.ttf") format("truetype"), url("../fonts/Interstate-Bold.eot?#iefix") format("eot"), url("../fonts/Interstate-Bold.woff") format("woff"); font-weight: normal; font-style: normal; }
 
-@font-face { font-family: 'Interstate-BoldCond'; src: url("../fonts/Interstate-BoldCond.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'Interstate-BoldCond'; src: url("../fonts/Interstate-BoldCond.ttf") format("truetype"), url("../fonts/Interstate-BoldCond.eot?#iefix") format("eot"), url("../fonts/Interstate-BoldCond.woff") format("woff"); font-weight: normal; font-style: normal; }
 
-@font-face { font-family: 'Interstate-Regular'; src: url("../fonts/Interstate-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'Interstate-Regular'; src: url("../fonts/Interstate-Regular.ttf") format("truetype"), url("../fonts/Interstate-Regular.woff") format("woff"); font-weight: normal; font-style: normal; }
 
 html, body { height: 80%; margin: 0; padding: 0; }
 
-.lp-container { font-size: 12px; font-size: 0.75rem; width: 90%; margin: 20px auto; line-height: 1.5; font-family: "Open Sans", sans-serif; font-weight: 400; color: #231f20; text-align: center; }
+.lp-container { font-size: 12px; font-size: 0.75rem; width: 100%; margin: 20px auto; line-height: 1.5; font-family: "Open Sans", sans-serif; font-weight: 400; color: #231f20; text-align: center; }
 
 .lp-container h1, .lp-container h2, .lp-container h4 { color: #231f20; }
 
@@ -89,9 +89,9 @@ html, body { height: 80%; margin: 0; padding: 0; }
 
 .header-title { top: 280px; background-color: #fff; width: 90%; margin-left: auto; margin-right: auto; padding-top: 20px; }
 
-.header-title .header-title-lg { font-size: 60px; font-size: 3.75rem; font-family: "Interstate-BlackCond", sans-serif; margin: 10px 10px; }
+.header-title .header-title-lg { font-size: 80px; font-size: 5rem; font-family: "Interstate-BlackCond", sans-serif; margin: 10px; line-height: 1; }
 
-@media only screen and (max-width: 40em) { .header-title .header-title-lg { font-size: 40px; font-size: 2.5rem; } }
+@media only screen and (max-width: 40em) { .header-title .header-title-lg { font-size: 50px; font-size: 3.125rem; } }
 
 @media only screen and (max-width: 30em) { .header-title .header-title-lg { font-size: 30px; font-size: 1.875rem; } }
 
@@ -109,7 +109,8 @@ html, body { height: 80%; margin: 0; padding: 0; }
 
 .flex-grid { display: flex; flex-direction: row; flex-wrap: nowrap; align-items: stretch; }
 
-@media only screen and (max-width: 40em) { .flex-grid { flex-wrap: wrap; } }
+@media only screen and (max-width: 40em) { .flex-grid { flex-wrap: wrap; }
+  .flex-grid.flex-disable-md { display: block; } }
 
 .flex-grid .flex-item { box-sizing: border-box; flex: 1; text-align: center; }
 
@@ -133,17 +134,31 @@ html, body { height: 80%; margin: 0; padding: 0; }
 
 .item-content a.cta { border: solid 2px #231f20; padding: 5px 15px; text-decoration: none; }
 
+@media only screen and (max-width: 1110px) { .item-content a.cta.sm-cta { padding: 0 5px; font-size: 10px; font-size: 0.625rem; } }
+
+@media only screen and (max-width: 799px) { .item-content a.cta.sm-cta { padding: 5px 15px; font-size: 14px; font-size: 0.875rem; } }
+
 .item-content p { padding-left: 5px; padding-right: 5px; }
 
 .item-content p.item-content-details { min-height: 140px; }
 
 @media only screen and (max-width: 60em) { .item-content p.item-content-details { height: 320px; } }
 
-@media only screen and (max-width: 40em) { .item-content p.item-content-details { height: 80px; } }
+@media only screen and (max-width: 799px) { .item-content p.item-content-details { height: 80px; } }
 
 .item-content figure { margin: 10px; }
 
-.item-content figure img.thrink { width: 80%; }
+.item-content figure img.thrink { width: 80%; display: initial; }
+
+@media only screen and (max-width: 799px) { .item-content figure img.thrink { width: 40%; } }
+
+.item-content figure img.instagram { width: 80%; display: initial; }
+
+.item-content h2.title { min-height: 50px; }
+
+@media only screen and (max-width: 60em) { .item-content h2.title { font-size: 15px; } }
+
+@media only screen and (max-width: 40em) { .item-content h2.title { font-size: 15px; } }
 
 .item-content .play { position: absolute; top: 39%; left: 44%; width: 11% !important; height: 23% !important; opacity: .6; transition: 300ms ease-in-out; }
 
@@ -207,7 +222,15 @@ html, body { height: 80%; margin: 0; padding: 0; }
 
 .lp-story p a:link, .lp-story p a:visited, .lp-story p a:hover, .lp-story p a:active { font-family: "Open Sans", sans-serif; font-weight: 600; font-size: 14px; font-size: 0.875rem; color: #231f20 !important; text-decoration: underline !important; }
 
-.caption p { min-height: 100px; }
+.caption p { min-height: 125px; }
+
+@media only screen and (max-width: 900px) { .caption p { min-height: 140px; margin: 0; } }
+
+@media only screen and (max-width: 870px) { .caption p { min-height: 200px; } }
+
+@media only screen and (max-width: 799px) { .caption p { min-height: 80px; } }
+
+.caption h2 { margin: 0; }
 
 .cta:hover { cursor: pointer; }
 

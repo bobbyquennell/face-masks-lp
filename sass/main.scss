@@ -3,30 +3,55 @@
 @import 'mixin';
 @import 'sanitize';
 
-// fonts
 @font-face {
   font-family: 'Interstate-BlackCond';
-  src: url("../fonts/Interstate-BlackCond.ttf") format("truetype");
+  src: url("../fonts/Interstate-BlackCond.ttf")  format("truetype"),
+  url("../fonts/Interstate-BlackCond.eot?#iefix")  format("eot"), //for ie6-ie8
+  url("../fonts/Interstate-BlackCond.woff")  format("woff");//modern browser
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Interstate-Bold';
-  src: url("../fonts/Interstate-Bold.ttf") format("truetype");
+  src: url("../fonts/Interstate-Bold.ttf") format("truetype"),
+  url("../fonts/Interstate-Bold.eot?#iefix") format("eot"),
+  url("../fonts/Interstate-Bold.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Interstate-BoldCond';
-  src: url("../fonts/Interstate-BoldCond.ttf") format("truetype");
+  src: url("../fonts/Interstate-BoldCond.ttf") format("truetype"),
+  url("../fonts/Interstate-BoldCond.eot?#iefix") format("eot"),
+  url("../fonts/Interstate-BoldCond.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
-@font-face { font-family: 'Interstate-Regular';
-  src: url("../fonts/Interstate-Regular.ttf") format("truetype");
+@font-face {
+  font-family: 'Interstate-Regular';
+  src: url("../fonts/Interstate-Regular.ttf") format("truetype"),
+  url("../fonts/Interstate-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+///////////////////////////////////////////////////
+// @font-face {
+//   font-family: 'Interstate-Bold';
+//   src: url("../fonts/Interstate-Bold.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'Interstate-BoldCond';
+//   src: url("../fonts/Interstate-BoldCond.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face { font-family: 'Interstate-Regular';
+//   src: url("../fonts/Interstate-Regular.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
 // variables
 $font-blackcond: 'Interstate-BlackCond', sans-serif;
@@ -41,6 +66,7 @@ $black: #231f20;
 $white: #fff;
 $lightgray: #ccc;
 
+$slick-dot-size: 12px;
 html,
 body {
   height: 80%;
@@ -54,7 +80,7 @@ body {
 
 .lp-container {
   @include font-size(12px);
-  width: 90%;
+  width: 100%;
   margin: 20px auto;
 
   line-height: 1.5;
@@ -107,15 +133,16 @@ body {
   margin-right: auto;
   padding-top: 20px;
   .header-title-lg {
-    @include font-size(60px);
+    @include font-size(80px);
     @include bp-medium {
-      @include font-size(40px);
+      @include font-size(50px);
     };
     @include bp-small {
       @include font-size(30px);
     };
     font-family: $font-blackcond;
-    margin: 10px 10px;
+    margin: 10px;
+    line-height: 1;
 
   }
   .header-title-sm {
@@ -157,6 +184,9 @@ body {
   align-items: stretch;
   @include bp-medium {
     flex-wrap: wrap;
+    &.flex-disable-md {
+      display: block;
+    }
   }
   .flex-item {
     // background-color: #A62E5C;
@@ -202,12 +232,26 @@ body {
       font-family: $font-copy;
       font-weight: 600;
       @include font-size(14px);
+      // @include bp-large {
+      //   @include font-size(10px);
+      // };
       text-decoration: underline;
     }
     &.cta {
       border: solid 2px $black;
       padding: 5px 15px;
       text-decoration: none;
+      &.sm-cta {
+        @include breakpoint(1110px) {
+          padding: 0 5px;
+          @include font-size(10px);
+        };
+        @include breakpoint(799px) {
+          padding: 5px 15px;
+          @include font-size(14px);
+        };
+      }
+
       // margin-top: 20px;
       }
 
@@ -220,7 +264,7 @@ body {
       @include bp-large {
         height: 320px;
       }
-      @include bp-medium {
+      @include breakpoint(799px) {
         height: 80px;
       }
     }
@@ -228,9 +272,31 @@ body {
   figure {
     margin: 10px;
     img {
-      &.thrink{
+      &.thrink {
         width: 80%;
-      }      
+        @include breakpoint(799px) {
+          width: 40%;
+        };
+        display: initial;
+      }
+      &.instagram {
+        width: 80%;
+        // @include breakpoint(640px) {
+        //   width: 40%;
+        // };
+        display: initial;
+      }
+    }
+  }
+  h2 {
+    &.title {
+      min-height: 50px;
+      @include bp-large {
+        font-size: 15px;
+      }
+      @include bp-medium {
+        font-size: 15px;
+      }
     }
   }
   .play {
@@ -351,58 +417,6 @@ body {
     width: 100%;
   }
 }
-
-
-// .col {
-//   @include bp-medium {
-//     width: 100%;
-//     float: none;
-//   };
-//   width: 50%;
-//   float: left;
-//   min-height: 1px;
-//   position: relative;
-//   &:first-child {
-//     clear: both;
-//   }
-//   &.col-right {
-//     float: right;
-//     @include bp-medium {
-//       float: none;
-//     };
-//   }
-//   .col-content {
-//     position: relative;
-//     img {
-//       width: 100%;
-//       @include bp-large {
-//         height: 100%;
-//         // width: 80%;
-//       };
-//       @include bp-medium {
-//         height: 100%;
-//         // width: 80%;
-//       };
-//       // @include bp-small {
-//       //   height: 180px;
-//       // };
-//       // &:hover {
-//       //   cursor: pointer;
-//       // }
-//       // height: 268px;
-//     }
-//     .play {
-//       position: absolute;
-//       top: 39%;
-//       left: 44%;
-//       width: 11% !important;
-//       height: 23% !important;
-//       opacity: .6;
-//       transition: 300ms ease-in-out;
-//     }
-//
-//   }
-// }
 .lp-story {
   padding: 5% 10%;
   @include bp-large {
@@ -447,7 +461,20 @@ body {
 //===============
 .caption {
   p {
-    min-height: 100px;
+    min-height: 125px;
+    @include breakpoint(900px) {
+      min-height: 140px;
+      margin: 0;
+    };
+    @include breakpoint(870px) {
+      min-height: 200px;
+    };
+    @include breakpoint(799px) {
+      min-height: 80px;
+    };
+  }
+  h2 {
+    margin: 0;
   }
 }
 
