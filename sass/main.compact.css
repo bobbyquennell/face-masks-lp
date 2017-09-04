@@ -128,33 +128,33 @@ html, body { height: 80%; margin: 0; padding: 0; }
 
 @media only screen and (max-width: 40em) { .item-content img { height: 100%; } }
 
-.item-content a { color: #231f20; display: inline-block; }
+.item-content a { color: #231f20 !important; display: inline-block; }
 
 .item-content a:link, .item-content a:visited, .item-content a:hover, .item-content a:active { font-family: "Open Sans", sans-serif; font-weight: 600; font-size: 14px; font-size: 0.875rem; text-decoration: underline; }
 
-.item-content a.cta { border: solid 2px #231f20; padding: 5px 15px; text-decoration: none; }
+.item-content a.cta { border: solid 2px #231f20; padding: 5px 15px; text-decoration: none; color: #231f20; }
 
 @media only screen and (max-width: 1110px) { .item-content a.cta.sm-cta { padding: 0 5px; font-size: 10px; font-size: 0.625rem; } }
 
 @media only screen and (max-width: 799px) { .item-content a.cta.sm-cta { padding: 5px 15px; font-size: 14px; font-size: 0.875rem; } }
 
-.item-content p { padding-left: 5px; padding-right: 5px; }
+.item-content p { max-width: 100%; }
 
-.item-content p.item-content-details { min-height: 140px; }
+.item-content p.item-content-details { padding-left: 5px; padding-right: 5px; min-height: 160px; }
 
-@media only screen and (max-width: 60em) { .item-content p.item-content-details { height: 320px; } }
+@media only screen and (max-width: 60em) { .item-content p.item-content-details { height: 260px; } }
 
 @media only screen and (max-width: 799px) { .item-content p.item-content-details { height: 80px; line-height: 1.2; } }
 
 .item-content figure { margin: 10px; }
 
-.item-content figure img.thrink { width: 80%; display: initial; }
+.item-content figure img.thrink { width: 80%; display: initial !important; }
 
 @media only screen and (max-width: 799px) { .item-content figure img.thrink { width: 40%; } }
 
-.item-content figure img.instagram { width: 80%; display: initial; }
+.item-content figure img.instagram { width: 80%; display: initial !important; }
 
-.item-content h2.title { min-height: 50px; }
+.item-content h2.title { min-height: 70px; }
 
 @media only screen and (max-width: 60em) { .item-content h2.title { font-size: 15px; } }
 
@@ -179,6 +179,8 @@ html, body { height: 80%; margin: 0; padding: 0; }
 @media only screen and (max-width: 40em) { .title-sm { font-size: 16px; font-size: 1rem; } }
 
 @media only screen and (max-width: 30em) { .title-sm { font-size: 15px; font-size: 0.9375rem; } }
+
+.row p.tagline { text-align: center; max-width: 100%; }
 
 .col-content { margin: 5px; }
 
@@ -222,7 +224,7 @@ html, body { height: 80%; margin: 0; padding: 0; }
 
 .lp-story p a:link, .lp-story p a:visited, .lp-story p a:hover, .lp-story p a:active { font-family: "Open Sans", sans-serif; font-weight: 600; font-size: 14px; font-size: 0.875rem; color: #231f20 !important; text-decoration: underline !important; }
 
-.caption p { min-height: 125px; }
+.caption p { min-height: 125px; max-width: 100%; }
 
 @media only screen and (max-width: 900px) { .caption p { min-height: 140px; margin: 0; } }
 
@@ -231,6 +233,8 @@ html, body { height: 80%; margin: 0; padding: 0; }
 @media only screen and (max-width: 799px) { .caption p { min-height: 80px; } }
 
 .caption h2 { margin: 0; }
+
+.slick-dots { margin: 0 !important; padding: 0 !important; }
 
 .cta:hover { cursor: pointer; }
 
