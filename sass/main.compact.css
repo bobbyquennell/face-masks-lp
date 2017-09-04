@@ -144,7 +144,7 @@ html, body { height: 80%; margin: 0; padding: 0; }
 
 @media only screen and (max-width: 60em) { .item-content p.item-content-details { height: 320px; } }
 
-@media only screen and (max-width: 799px) { .item-content p.item-content-details { height: 80px; } }
+@media only screen and (max-width: 799px) { .item-content p.item-content-details { height: 80px; line-height: 1.2; } }
 
 .item-content figure { margin: 10px; }
 
