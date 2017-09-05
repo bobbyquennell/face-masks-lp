@@ -30,7 +30,10 @@ var Site;
             breakpoint: 2000,
             settings: "unslick",
           },
-
+          {
+            breakpoint: 1480,
+            settings: "unslick",
+          },
           {
             breakpoint: 799,
             settings: {
@@ -46,6 +49,10 @@ var Site;
         responsive: [
           {
             breakpoint: 2000,
+            settings: "unslick",
+          },
+          {
+            breakpoint: 1480,
             settings: "unslick",
           },
           {
