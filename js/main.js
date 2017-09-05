@@ -27,7 +27,7 @@ var Site;
         dots: true,
         responsive: [
           {
-            breakpoint: 1480,
+            breakpoint: 2000,
             settings: "unslick",
           },
 
@@ -45,10 +45,9 @@ var Site;
         dots: true,
         responsive: [
           {
-            breakpoint: 1480,
+            breakpoint: 2000,
             settings: "unslick",
           },
-
           {
             breakpoint: 640,
             settings: {
